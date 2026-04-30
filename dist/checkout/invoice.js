@@ -26,3 +26,24 @@ export function invoicePhase(inv, nowMs) {
         return "pending_confirmations";
     return "awaiting_payment";
 }
+export function depositHeightForConfirmations(events) {
+    let h = null;
+    for (const e of events) {
+        const dh = e.deposit?.height;
+        if (typeof dh !== "number")
+            continue;
+        if (!Number.isFinite(dh))
+            continue;
+        if (h === null || dh > h)
+            h = dh;
+    }
+    return h;
+}
+export function confirmationsCount(bestHeight, depositHeight) {
+    if (bestHeight === null || depositHeight === null)
+        return null;
+    if (!Number.isFinite(bestHeight) || !Number.isFinite(depositHeight))
+        return null;
+    const confs = Math.floor(bestHeight) - Math.floor(depositHeight) + 1;
+    return confs < 0 ? 0 : confs;
+}
