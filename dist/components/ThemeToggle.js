@@ -1,7 +1,7 @@
 "use client";
 import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
 import { useEffect, useState } from "react";
-import { getTheme, setTheme } from "../theme";
+import { getTheme, setTheme } from "../theme.js";
 export function ThemeToggle() {
     const [theme, setThemeState] = useState("dark");
     useEffect(() => {

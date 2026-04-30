@@ -2,34 +2,28 @@
 
 Shared React widgets and theme utilities for Juno Pay Server frontends.
 
-The package is published to GitHub Packages as `@junopayserver/widgets`.
+The package can be installed directly from the public GitHub repository. No GitHub Packages login or npm token is required.
 
 ## Install
 
-Authenticate npm against GitHub Packages before installing:
-
 ```bash
-npm login --scope=@junopayserver --registry=https://npm.pkg.github.com
+npm install github:JunoPayServer/junopay-widgets
 ```
 
-Use your GitHub username and a personal access token with `read:packages`.
+Pin a release, tag, branch, or commit when you need a stable build:
 
-Install the package:
+```bash
+npm install github:JunoPayServer/junopay-widgets#v0.1.2
+```
+
+The installed package name remains `@junopayserver/widgets`.
+
+## GitHub Packages
+
+The package is also published to GitHub Packages for private registry workflows:
 
 ```bash
 npm install @junopayserver/widgets --registry=https://npm.pkg.github.com
-```
-
-For a project-level npm config, add this to `.npmrc`:
-
-```ini
-@junopayserver:registry=https://npm.pkg.github.com
-```
-
-Then install normally:
-
-```bash
-npm install @junopayserver/widgets
 ```
 
 ## Usage
